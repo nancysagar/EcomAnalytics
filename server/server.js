@@ -19,6 +19,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use(express.json());
 
 // Add the API route
+app.get('/', (req, res) => {
+  res.send('Welcome to EcomAnalytics API');
+});
 app.get('/api/sales-over-time', async (req, res) => {
   const { interval } = req.query; // daily, monthly, quarterly, yearly
 
